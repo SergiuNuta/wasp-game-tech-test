@@ -55,6 +55,10 @@ div {
           box-shadow: -10px -10px 20px 0px rgba(255, 255, 255, 0.05), 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
+*:focus {
+  outline: none;
+}
+
 button {
   border: none;
   height: 70px;
@@ -64,6 +68,17 @@ button {
   font-weight: bold;
   border-radius: 10px;
   color: white;
+  -webkit-box-shadow: inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0), 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px #2e2d2d, inset 0px 0px 4px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 0 15px rgba(55, 84, 170, 0), inset 0 0 20px rgba(255, 255, 255, 0), 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px #2e2d2d, inset 0px 0px 4px rgba(255, 255, 255, 0.2);
+  -webkit-transition: -webkit-box-shadow 399ms ease-in-out;
+  transition: -webkit-box-shadow 399ms ease-in-out;
+  transition: box-shadow 399ms ease-in-out;
+  transition: box-shadow 399ms ease-in-out, -webkit-box-shadow 399ms ease-in-out;
+}
+
+button:hover {
+  -webkit-box-shadow: inset 7px 7px 15px rgba(55, 84, 170, 0.15), inset -7px -7px 20px #302f2f, 0px 0px 4px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 7px 7px 15px rgba(55, 84, 170, 0.15), inset -7px -7px 20px #302f2f, 0px 0px 4px rgba(255, 255, 255, 0.2);
 }
 
 .neu {

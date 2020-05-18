@@ -49,7 +49,7 @@ class Drone extends Wasp {
     constructor() {
         super("Drone", 60, 12);
     }
-} 
+}
 
 let wasps = [];
 
@@ -80,7 +80,7 @@ document.getElementById("hitButton").addEventListener("click", () => {
 
     randomWasp.getsHit();
 
-    console.log(randomNumber, randomWasp.hitPoints);
+    console.log(randomNumber, randomWasp.hitPoints, randomWasp.name);
 
     if (wasps[0].hitPoints <= 0) {
         wasps.splice(0, wasps.length);
