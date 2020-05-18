@@ -54,7 +54,9 @@ class Drone extends Wasp {
 let wasps = [];
 
 const createWasps = () => {
+
     wasps.push(new Queen());
+
     for (i = 0; i < 5; i++) {
         wasps.push(new Worker());
     }
@@ -74,13 +76,15 @@ const updateWasps = () => {
 
 updateWasps();
 
-document.getElementById("hitButton").addEventListener("click", () => {
+$("#hitButton").click(function () {
     let randomNumber = Math.floor(Math.random() * wasps.length);
     let randomWasp = wasps[randomNumber];
 
     randomWasp.getsHit();
 
-    console.log(randomNumber, randomWasp.hitPoints, randomWasp.name);
+    $("div").eq(randomNumber).effect("bounce", "slow");
+
+    console.log(randomWasp);
 
     if (wasps[0].hitPoints <= 0) {
         wasps.splice(0, wasps.length);
@@ -90,10 +94,12 @@ document.getElementById("hitButton").addEventListener("click", () => {
     updateWasps();
 });
 
-const shakeBee = () => {
-    $("#hitButton").click(function () {
-        $("div").first().effect("bounce", "slow");
-    });
-}
-shakeBee();
+// const shakeBee = () => {
+//     let randomNumber = Math.floor(Math.random() * wasps.length);    
+
+//     $("#hitButton").click(function () {
+//         $("div").eq(randomNumber).effect("bounce", "slow");
+//     });
+// }
+// shakeBee();
 
