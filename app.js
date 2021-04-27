@@ -13,18 +13,18 @@ class Wasp {
 
     get html() {
         if (this.name == "Queen") {
-            return `<div class="queen">
+            return `<div class="queen bee">
             <p>${this.name}</p>
             <p>${this.hitPoints}</p>
         </div>`;
 
         } else if (this.name == "Worker") {
-            return `<div class="worker">
+            return `<div class="worker bee">
             <p>${this.name}</p>
             <p>${this.hitPoints}</p>
         </div>`;
         } else {
-            return `<div class="drone">
+            return `<div class="drone bee">
             <p>${this.name}</p>
             <p>${this.hitPoints}</p>
         </div>`;
@@ -57,10 +57,11 @@ const createWasps = () => {
 
     wasps.push(new Queen());
 
-    for (i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         wasps.push(new Worker());
     }
-    for (i = 0; i < 8; i++) {
+
+    for (let j = 0; j < 8; j++) {
         wasps.push(new Drone());
     }
 };
@@ -76,13 +77,28 @@ const updateWasps = () => {
 
 updateWasps();
 
+const beeElement = document.querySelectorAll('.bee');
+
 $("#hitButton").click(function () {
+
+    // beeElement.classList.remove('miniBounce');
+    // beeElement.offsetWidth = beeElement.offsetWidth;
     let randomNumber = Math.floor(Math.random() * wasps.length);
     let randomWasp = wasps[randomNumber];
+    // $("div").eq(randomWasp).effect("bounce", "slow");
+    beeElement.offsetWidth = Element.offsetWidth;
+    beeElement[randomNumber].classList.add('miniBounce');
+    setTimeout(function() {
+        beeElement[randomNumber].classList.remove('miniBounce');
+    }, 3000)
+    // beeElement[randomNumber].classList.remove('miniBounce');
+
+    console.log(beeElement)
+
 
     randomWasp.getsHit();
 
-    $("div").eq(randomNumber).effect("bounce", "slow");
+    // $("div").eq(randomNumber).effect("bounce", "slow");
 
     console.log(randomWasp);
 

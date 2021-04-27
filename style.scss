@@ -8,6 +8,10 @@ $shadow-dark: rgba(0, 0, 0, 0.2);
   padding: 0;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 html,
@@ -45,10 +49,6 @@ div {
     10px 10px 20px 0px $shadow-dark;
 }
 
-*:focus {
-    outline: none;
-}
-
 button {
   border: none;
   height: 70px;
@@ -58,20 +58,15 @@ button {
   font-weight: bold;
   border-radius: 10px;
   color: white;
-  box-shadow: 
-    inset 0 0 15px rgba(55, 84, 170,0),
-    inset 0 0 20px rgba(255, 255, 255,0),
-    7px 7px 15px rgba(55, 84, 170,.15),
-    -7px -7px 20px rgb(46, 45, 45),
-    inset 0px 0px 4px rgba(255, 255, 255,.2);
+  box-shadow: inset 0 0 15px rgba(55, 84, 170, 0),
+    inset 0 0 20px rgba(255, 255, 255, 0), 7px 7px 15px rgba(55, 84, 170, 0.15),
+    -7px -7px 20px rgb(46, 45, 45), inset 0px 0px 4px rgba(255, 255, 255, 0.2);
 
-    &:hover {
-        box-shadow: 
-          inset 7px 7px 15px rgba(55, 84, 170,.15),
-          inset -7px -7px 20px rgb(48, 47, 47),
-          0px 0px 4px rgba(255, 255, 255,.2);
-      }
-      transition: box-shadow 399ms ease-in-out;
+  &:hover {
+    box-shadow: inset 7px 7px 15px rgba(55, 84, 170, 0.15),
+      inset -7px -7px 20px rgb(48, 47, 47), 0px 0px 4px rgba(255, 255, 255, 0.2);
+  }
+  transition: box-shadow 399ms ease-in-out;
 }
 
 .neu {
@@ -80,13 +75,40 @@ button {
 }
 
 .queen {
-    background-color: red;
+  background-color: red;
 }
 
 .worker {
-    background-color: orange;
+  background-color: orange;
 }
 
 .drone {
-    background-color: #F7B761;
+  background-color: #f7b761;
+}
+
+@keyframes miniBounce {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.miniBounce {
+  animation-name: miniBounce;
+  animation-timing-function: ease;
+  // animation: miniBounce 0.4s ease-in-out;
+}
+
+.bee {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
 }

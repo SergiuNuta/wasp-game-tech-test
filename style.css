@@ -6,6 +6,10 @@
           box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+
 html,
 body {
   width: 100%;
@@ -55,10 +59,6 @@ div {
           box-shadow: -10px -10px 20px 0px rgba(255, 255, 255, 0.05), 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
 }
 
-*:focus {
-  outline: none;
-}
-
 button {
   border: none;
   height: 70px;
@@ -95,6 +95,60 @@ button:hover {
 }
 
 .drone {
-  background-color: #F7B761;
+  background-color: #f7b761;
+}
+
+@-webkit-keyframes miniBounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  30% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes miniBounce {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  30% {
+    -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.miniBounce {
+  -webkit-animation-name: miniBounce;
+          animation-name: miniBounce;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.bee {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 /*# sourceMappingURL=style.css.map */
